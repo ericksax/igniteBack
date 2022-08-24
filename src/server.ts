@@ -1,12 +1,12 @@
 import express from "express";
 
-import { route } from "./routes";
+import { userRoutes } from "./routes/user.routes";
 
 const app = express();
 
 const port = 3004;
 app.use(express.json());
-app.use(route);
+app.use("/users", userRoutes);
 
 app.listen(port, () => {
   console.log(`server running on port ${port}`);
